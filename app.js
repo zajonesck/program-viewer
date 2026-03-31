@@ -66,7 +66,7 @@ function showApp() {
   document.getElementById('upload-screen').style.display = 'none';
   document.getElementById('app').style.display = '';
   document.getElementById('program-title').textContent = programData.title;
-  renderWeek(0);
+  renderWeek(programData.weeks.length - 1);
 }
 
 function showError(msg) {
