@@ -1,1 +1,8 @@
 .vercel
+*.numbers
+*.xlsx
+*.xls
+program_data.json
+parse.py
+export_temp/
+export_temp.csv/
