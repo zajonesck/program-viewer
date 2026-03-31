@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Viewer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Upload Screen -->
+  <div id="upload-screen">
+    <div class="upload-card">
+      <div class="upload-logo">📋</div>
+      <h1>Program Viewer</h1>
+      <p class="upload-subtitle">Upload your training program to get started</p>
+
+      <div class="drop-zone" id="drop-zone">
+        <input type="file" id="file-input" accept=".xlsx,.xls,.csv" hidden />
+        <div class="drop-icon">↑</div>
+        <div class="drop-primary">Drop your file here</div>
+        <div class="drop-secondary">or <button class="link-btn" id="browse-btn">browse files</button></div>
+        <div class="drop-formats">.xlsx · .xls · .csv</div>
+      </div>
+
+      <div class="upload-instructions">
+        <strong>How to export:</strong>
+        <ul>
+          <li><strong>Numbers</strong> → File → Export → Excel (.xlsx)</li>
+          <li><strong>Google Sheets</strong> → File → Download → Excel (.xlsx)</li>
+          <li><strong>Excel</strong> → Save as .xlsx</li>
+        </ul>
+      </div>
+
+      <div id="upload-error" class="upload-error" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- App -->
+  <div id="app" style="display:none">
+    <header>
+      <h1 id="program-title"></h1>
+      <div class="header-right">
+        <div class="week-nav">
+          <button id="prev-week" title="Previous week">‹</button>
+          <span id="week-label"></span>
+          <button id="next-week" title="Next week">›</button>
+        </div>
+        <button class="change-btn" id="change-btn" title="Upload a different file">↑ New file</button>
+      </div>
+    </header>
+
+    <div class="day-tabs" id="day-tabs"></div>
+
+    <main id="exercises"></main>
+  </div>
+
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
